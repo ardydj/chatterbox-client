@@ -71,6 +71,7 @@ describe('chatterbox', function() {
         text: 'Never underestimate the power of the Schwartz!',
         roomname: 'lobby'
       };
+      console.log($('#chats').children().length);
       MessagesView.renderMessage(message);
       expect($('#chats').children().length).to.equal(1);
     });
@@ -97,7 +98,7 @@ describe('chatterbox', function() {
 
       Friends.toggleStatus.restore();
     });
-
+    console.log(window.Rooms);
     it('should add a room when clicking add', function() {
       sinon.spy(Rooms, 'add');
       var prompt = window.prompt;
